@@ -14,4 +14,11 @@
 # [START runtime]
 runtime: nodejs
 env: flex
+
+handlers:
+# Serve images as static resources.
+- url: /(.+\.(gif|png|jpg|css|js|svg|ttf|woff))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg|css|js|svg|ttf|woff)$
+  application_readable: true
 # [END runtime]
