@@ -14,13 +14,17 @@
 'use strict';
 
 const express = require('express');
-
+var fs = require('fs');
 const app = express();
+app.use(express.static(__dirname));
 
 // [START hello_world]
 // Say hello!
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!');
+  fs.readFile(__dirname + '/index.html', 'utf8', function(err,text){
+    res.status(200).send(text);
+  })
+  
 });
 // [END hello_world]
 
