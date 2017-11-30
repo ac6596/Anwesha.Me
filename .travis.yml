@@ -1,3 +1,6 @@
+language: node_js
+node_js:
+- "8.9.1"
 deploy:
   provider: gae
   keyfile: anwesha-me-d2477c2dd62e.json
