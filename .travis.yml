@@ -10,4 +10,4 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_fe3214124553_key -iv $encrypted_fe3214124553_iv
   -in anwesha-me-d2477c2dd62e.json.enc -out anwesha-me-d2477c2dd62e.json -d
 script:
-- build
+- node build
