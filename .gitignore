@@ -59,3 +59,4 @@ typings/
 .env
 .DS_Store
 anwesha-me-d2477c2dd62e.json
+package-lock.json
