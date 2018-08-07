@@ -18,9 +18,11 @@ var fs = require('fs');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(express.static(__dirname));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // [START hello_world]
 // Say hello!
+require('./routes')(app, {});
 app.get('/', (req, res) => {
   fs.readFile(__dirname + '/index.html', 'utf8', function(err,text){
     res.status(200).send(text);

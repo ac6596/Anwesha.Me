@@ -53,9 +53,11 @@
     ]
   },
   "dependencies": {
+    "Math": "0.0.1-security",
+    "body-parser": "^1.15.2",
     "express": "4.16.2",
     "fs": "0.0.1-security",
-    "body-parser": "^1.15.2"
+    "mathjs": "^5.0.4"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "2.1.0",
