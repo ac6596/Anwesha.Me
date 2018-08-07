@@ -1,8 +1,8 @@
 {
-  "name": "nodejs-getting-started",
+  "name": "anwesha-me-app",
   "version": "1.0.0",
-  "description": "End to end sample for running Node.js applications on Google Cloud Platform",
-  "repository": "https://github.com/GoogleCloudPlatform/nodejs-getting-started",
+  "description": "Anwesha.me web app based on node.js hosted on Google App Engine",
+  "repository": "https://github.com/ac6596/Anwesha.Me",
   "private": true,
   "scripts": {
     "start": "node app.js",
@@ -10,23 +10,15 @@
     "test": "samples test app",
     "cover": "nyc --cache npm test; nyc report --reporter=html"
   },
-  "author": "Google Inc.",
+  "author": "AnnyKams",
   "contributors": [
     {
-      "name": "Jon Wayne Parrott",
-      "email": "jonwayne@google.com"
+      "name": "Anwesha Chakraborty",
+      "email": "ac6596@gmail.com"
     },
     {
-      "name": "Jonathan Simon",
-      "email": "jbsimon@google.com"
-    },
-    {
-      "name": "Jason Dobry",
-      "email": "jdobry@google.com"
-    },
-    {
-      "name": "Ace Nassri",
-      "email": "anassri@google.com"
+      "name": "Avik Bhattacharyya",
+      "email": "kambui.avik@gmail.com"
     }
   ],
   "cloud-repo-tools": {
