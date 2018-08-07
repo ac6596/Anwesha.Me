@@ -16,6 +16,7 @@
 const express = require('express');
 var fs = require('fs');
 const app = express();
+const bodyParser = require('body-parser');
 app.use(express.static(__dirname));
 
 // [START hello_world]
