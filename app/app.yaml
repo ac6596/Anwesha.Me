@@ -15,6 +15,10 @@
 runtime: nodejs
 env: flex
 
+automatic_scaling:
+  min_num_instances: 0
+  max_num_instances: 1
+
 handlers:
 # Serve images as static resources.
 - url: /(.+\.(gif|png|jpg|css|js|svg|ttf|woff))$
