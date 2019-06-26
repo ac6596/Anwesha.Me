@@ -4,7 +4,7 @@ node_js:
 deploy:
   provider: gae
   keyfile: anwesha-me-d2477c2dd62e.json
-  project: valiant-song-187415
+  project: anwesha-me
   config: app/app.yaml
 before_install:
 - openssl aes-256-cbc -K $encrypted_fe3214124553_key -iv $encrypted_fe3214124553_iv
