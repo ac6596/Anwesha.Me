@@ -1,0 +1,11 @@
+node_modules/
+.git/
+.gitignore
+.dockerignore
+vids/
+.travis.yml
+README.md
+app/package.json
+app/app.js
+app/routes/
+*.enc

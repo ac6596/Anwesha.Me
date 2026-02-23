@@ -1,0 +1,35 @@
+steps:
+  # Step 1: Build the container image using the Containerfile
+  - name: 'gcr.io/cloud-builders/docker'
+    args: 
+      - 'build'
+      - '-f'
+      - 'Containerfile'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/anwesha-me-app:$COMMIT_SHA'
+      - '.'
+
+  # Step 2: Push the image to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: 
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/anwesha-me-app:$COMMIT_SHA'
+
+  # Step 3: Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'anwesha-me-app'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/anwesha-me-app:$COMMIT_SHA'
+      - '--region'
+      - 'us-central1' # Adjust this to your desired region
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+
+# Define the image that Cloud Build will push (to be tracked in build history)
+images:
+  - 'gcr.io/$PROJECT_ID/anwesha-me-app:$COMMIT_SHA'

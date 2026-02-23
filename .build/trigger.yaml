@@ -1,0 +1,11 @@
+# Google Cloud Build Trigger Configuration
+# Defines the trigger that listens for pushes to the master branch
+# and invokes the cloudbuild.yaml workflow.
+name: 'anwesha-me-app-master-trigger'
+description: 'Triggers a build and deployment to Cloud Run on push to master branch'
+github:
+  owner: 'ac6596' # From package.json / repository URL
+  name: 'Anwesha.Me'
+  push:
+    branch: '^master$'
+filename: '.build/cloudbuild.yaml'
