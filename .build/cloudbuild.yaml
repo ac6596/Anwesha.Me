@@ -25,7 +25,7 @@ steps:
       - '--image'
       - 'gcr.io/$PROJECT_ID/anwesha-me-app:$COMMIT_SHA'
       - '--region'
-      - 'us-central1' # Adjust this to your desired region
+      - 'asia-southeast1' # Adjust this to your desired region
       - '--platform'
       - 'managed'
       - '--allow-unauthenticated'
