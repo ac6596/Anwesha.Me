@@ -105,6 +105,10 @@ a img { border: 0; }
   height: 100%;
   z-index: 0;
   display: block;
+  filter: blur(0.7px);
+  /* Fade text in from top, out toward bottom */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 9%, black 58%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 9%, black 58%, transparent 100%);
 }
 
 .hero-content {
