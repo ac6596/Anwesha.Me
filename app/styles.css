@@ -98,9 +98,14 @@ a img{border:0px;}
 
 #experience{margin:0px 43px; padding-top:115px;}
 #experience .col{
-	width:235px;
-	float:left;
+	width:100%;
+	float:none;
+	margin-bottom:30px;
 }
+#experience .col h2{margin-bottom:4px;}
+#experience .col ul{margin:10px 0 0 18px;}
+#experience .col ul li{margin-bottom:6px; line-height:1.6;}
+#experience .col .exp-date{font-style:italic; color:#888; font-size:13px;}
 #experience .content{overflow:auto;}
 #experience .col-mid{margin:0px 65px;}
 
@@ -110,6 +115,43 @@ a img{border:0px;}
 
 #work{margin:0px 43px; padding-top:115px;}
 #work .content{overflow:auto;}
+
+/* Project Cards */
+.project-cards{display:flex; flex-wrap:wrap; gap:24px; padding:10px 0;}
+.project-card{
+	background:#f9f9f9;
+	border:1px solid #e0e0e0;
+	border-radius:6px;
+	padding:24px;
+	width:280px;
+	box-sizing:border-box;
+}
+.project-card h3{margin:10px 0 8px; font-size:16px;}
+.project-card p{font-size:13px; line-height:1.6; color:#555; margin:0 0 14px;}
+.project-icons{display:flex; align-items:center; gap:10px; margin-bottom:10px;}
+.project-icons i{font-size:28px;}
+.tech-badge{
+	background:#f4a261;
+	color:#fff;
+	font-size:11px;
+	font-weight:bold;
+	padding:3px 8px;
+	border-radius:4px;
+	letter-spacing:0.5px;
+}
+.project-link{
+	display:inline-flex;
+	align-items:center;
+	gap:6px;
+	font-size:13px;
+	color:#333;
+	text-decoration:none;
+	border:1px solid #ccc;
+	padding:5px 12px;
+	border-radius:4px;
+}
+.project-link:hover{background:#333; color:#fff;}
+
 #work #work-thumbs li{
 	list-style:none;
 	float:left;
@@ -117,6 +159,32 @@ a img{border:0px;}
 	padding:0px;
 }
 #work #work-thumbs li.last{margin:0px;}
+
+/****************************************************/
+/* BLOG SECTION */
+/****************************************************/
+#blog{margin:0px 43px; padding-top:115px;}
+#blog h1{color:#ffffff;}
+#blog .content{overflow:auto;}
+.blog-cards{display:flex; flex-wrap:wrap; gap:24px; padding:10px 0;}
+.blog-card{
+    background:#f9f9f9;
+    border:1px solid #e0e0e0;
+    border-radius:6px;
+    padding:24px;
+    width:340px;
+    box-sizing:border-box;
+}
+.blog-card h3{margin:6px 0 10px; font-size:15px; line-height:1.4;}
+.blog-card h3 a{color:#333; text-decoration:none;}
+.blog-card h3 a:hover{text-decoration:underline;}
+.blog-card p{font-size:13px; line-height:1.6; color:#555; margin:0 0 14px;}
+.blog-date{font-size:12px; color:#888; font-style:italic;}
+.blog-card--teal{background:#e0f7f4; border-color:#b2dfdb;}
+.blog-card--cta{background:#333; border-color:#333;}
+.blog-card--cta p{color:#ccc;}
+.blog-card--cta .project-link{color:#fff; border-color:#fff;}
+.blog-card--cta .project-link:hover{background:#fff; color:#333;}
 
 /****************************************************/
 /* CONNECT SECTION */
