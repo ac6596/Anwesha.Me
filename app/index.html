@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
@@ -30,10 +31,32 @@
   </ul>
 </div>
 
+<!--Begin Hero Section-->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Lead Data Engineer &amp; Architect</span>
+    <h1 class="hero-heading">Building Resilient<br>Data <em>Ecosystems.</em></h1>
+    <p class="hero-sub">Architecting Resilient Data Ecosystems for Australia’s Most Regulated Sectors—Engineering Foundations that Scale from Ingestion to Governance.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="hero-cta hero-cta--primary">View Portfolio</a>
+      <a href="/blog" class="hero-cta hero-cta--ghost">Read the Blog &rarr;</a>
+    </div>
+  </div>
+  <a href="#about" class="hero-scroll-hint">
+    <span>Scroll</span>
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M8 3v14M2 11l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+<!--End Hero Section-->
+
 <div id="container">
 
 <!--Begin About Section-->
 <div id="about" class="reveal">
+  <div id="about-parallax-bg"></div>
   <h1>About</h1>
   <ul id="top-social">
     <!--<li><a href="https://www.facebook.com/anwesha.chakraborty.180" class="facebook">Facebook</a></li>-->
@@ -49,7 +72,7 @@
       <div class="ecosystem-bento">
 
         <!-- Ingestion & Orchestration -->
-        <div class="eco-card">
+        <div class="eco-card" data-aos="fade-up" data-aos-delay="0">
           <div class="eco-card-header">
             <span class="eco-dot eco-dot--indigo"></span>
             <h4 class="eco-category">Ingestion &amp; Orchestration</h4>
@@ -61,11 +84,12 @@
             <span class="eco-tool">Azure Data Factory</span>
             <span class="eco-tool">Cloud Composer</span>
             <span class="eco-tool">Dataflow</span>
+            <span class="eco-tool">Oozie</span>
           </div>
         </div>
 
         <!-- Transformation -->
-        <div class="eco-card">
+        <div class="eco-card" data-aos="fade-up" data-aos-delay="100">
           <div class="eco-card-header">
             <span class="eco-dot eco-dot--teal"></span>
             <h4 class="eco-category">Transformation</h4>
@@ -81,7 +105,7 @@
         </div>
 
         <!-- Governance & Quality -->
-        <div class="eco-card">
+        <div class="eco-card" data-aos="fade-up" data-aos-delay="200">
           <div class="eco-card-header">
             <span class="eco-dot eco-dot--violet"></span>
             <h4 class="eco-category">Governance &amp; Quality</h4>
@@ -167,6 +191,7 @@
             <span class="bento-subgroup-label">On-Prem</span>
             <div class="bento-tags">
               <span class="bento-tag">Cloudera</span>
+              <span class="bento-tag">Redhat Openshift</span>
             </div>
           </div>
         </div>
@@ -249,37 +274,37 @@
   <div class="content">
 
     <div class="col">
-      <h2>Senior Data Engineer – ANZ | KYC Uplift</h2>
+      <h2>Senior Data Engineer – <span class="company-name">ANZ</span> | KYC Uplift</h2>
       <span class="exp-date">Nov 2025 – Present</span>
       <p>Working as a Lead Data Engineer within KYC uplift, building end-to-end data solutions that deliver trusted insights for financial crime, AML, and regulatory obligations. Responsible for stakeholder management across business and technology, embedding data governance, lineage, and quality controls, optimising data pipelines for scale and reliability, and coaching data engineers to support sustainable delivery.</p>
     </div>
 
     <div class="col">
-      <h2>Senior Data Engineer – ANZ | Customer Care</h2>
+      <h2>Senior Data Engineer – <span class="company-name">ANZ</span> | Customer Care</h2>
       <span class="exp-date">May 2024 – Nov 2025</span>
       <p>Worked as a Senior Data Engineer building a proactive, customer-centric data approach across high impact processes (HIPs) such as bereavement, hardship, and remediation. Partnered closely with business, risk, and operations stakeholders — owning data governance and quality frameworks, improving pipeline performance and resilience, and mentoring data engineers to uplift team capability and delivery maturity.</p>
     </div>
 
     <div class="col">
-      <h2>Senior Data Engineer – ANZ | Retail &amp; Commercial</h2>
+      <h2>Senior Data Engineer – <span class="company-name">ANZ</span> | Retail &amp; Commercial</h2>
       <span class="exp-date">Apr 2023 – May 2024</span>
       <p>Architected enterprise Delta Lake transaction assets in Spark. Led 6 engineers through Teradata-to-OpenShift migration, standardising Airflow + dbt for data observability at scale.</p>
     </div>
 
     <div class="col">
-      <h2>Data Engineer – ANZ | Commercial &amp; Responsible Banking</h2>
+      <h2>Data Engineer – <span class="company-name">ANZ</span> | Commercial &amp; Responsible Banking</h2>
       <span class="exp-date">2020 – 2023</span>
       <p>Built geospatial and payment pipelines for regulatory-grade analytics. Delivered R Shiny tools and automated CI/CD for legacy Python platform modernisation.</p>
     </div>
 
     <div class="col">
-      <h2>Data Engineer – AGL Energy</h2>
+      <h2>Data Engineer – <span class="company-name">AGL</span> Energy</h2>
       <span class="exp-date">2019 – 2020</span>
       <p>Designed Azure data platforms (ADF, Synapse, Databricks) for energy analytics and LRET/SRET compliance. Reduced ETL latency ~35% and implemented Microsoft Purview for data governance.</p>
     </div>
 
     <div class="col">
-      <h2>Earlier Roles – HCL, Infosys, Wipro</h2>
+      <h2>Earlier Roles – <span class="company-name">HCL</span>, <span class="company-name">Infosys</span>, <span class="company-name">Wipro</span></h2>
       <span class="exp-date">Software Engineer → Senior Software Engineer</span>
       <p>Built Hadoop, Spark, Kafka &amp; SSIS pipelines for BFSI and FMCG clients. Delivered AUSTRAC compliance systems and cross-border payment reporting at enterprise scale.</p>
     </div>
@@ -419,6 +444,139 @@
   $(document).ready(function() {
     $("a[rel^='prettyPhoto']").prettyPhoto({social_tools: false, deeplinking: false});
   });
+
+  // --- Shrinking header on scroll ---
+  var header = document.getElementById('header');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 60) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+
+    // --- Parallax hero background ---
+    var parallaxBg = document.getElementById('about-parallax-bg');
+    if (parallaxBg) {
+      parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
+    }
+  }, { passive: true });
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 450, easing: 'ease-out', once: true, offset: 60 });
+</script>
+<script>
+// --- Hero canvas: data-network background animation ---
+(function() {
+  var canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W, H, particles, raf;
+  var CONN_DIST = 160;
+  var GRID_STEP = 70;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function Particle() {
+    this.reset();
+  }
+  Particle.prototype.reset = function() {
+    this.x  = Math.random() * W;
+    this.y  = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * 0.35;
+    this.vy = (Math.random() - 0.5) * 0.35;
+    this.r  = Math.random() * 1.6 + 0.6;
+    this.alpha = Math.random() * 0.45 + 0.15;
+    this.pulse = Math.random() > 0.85; // ~15% are "data nodes" that pulse
+    this.pulseT = Math.random() * Math.PI * 2;
+  };
+  Particle.prototype.update = function() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0)  this.x = W;
+    if (this.x > W)  this.x = 0;
+    if (this.y < 0)  this.y = H;
+    if (this.y > H)  this.y = 0;
+    if (this.pulse) this.pulseT += 0.025;
+  };
+
+  function init() {
+    resize();
+    var count = Math.max(40, Math.floor((W * H) / 16000));
+    particles = [];
+    for (var i = 0; i < count; i++) particles.push(new Particle());
+  }
+
+  function drawGrid() {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(99,102,241,0.045)';
+    ctx.lineWidth = 0.5;
+    for (var x = 0; x <= W; x += GRID_STEP) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (var y = 0; y <= H; y += GRID_STEP) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawConnections() {
+    ctx.save();
+    for (var i = 0; i < particles.length; i++) {
+      for (var j = i + 1; j < particles.length; j++) {
+        var dx   = particles[i].x - particles[j].x;
+        var dy   = particles[i].y - particles[j].y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONN_DIST) {
+          var a = (1 - dist / CONN_DIST) * 0.18;
+          ctx.strokeStyle = 'rgba(99,102,241,' + a + ')';
+          ctx.lineWidth   = 0.7;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    ctx.restore();
+  }
+
+  function drawParticles() {
+    ctx.save();
+    particles.forEach(function(p) {
+      p.update();
+      var r     = p.pulse ? p.r * (1.4 + 0.6 * Math.sin(p.pulseT)) : p.r;
+      var alpha = p.pulse ? p.alpha * (1.2 + 0.8 * Math.sin(p.pulseT)) : p.alpha;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(99,102,241,' + Math.min(alpha, 0.9) + ')';
+      ctx.fill();
+      if (p.pulse) {
+        // Soft glow ring around pulsing nodes
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, r * 2.8, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(99,102,241,' + (alpha * 0.12) + ')';
+        ctx.fill();
+      }
+    });
+    ctx.restore();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    drawGrid();
+    drawConnections();
+    drawParticles();
+    raf = requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', function() { init(); });
+  init();
+  draw();
+})();
 </script>
 </body>
 </html>

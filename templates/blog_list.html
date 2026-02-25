@@ -23,15 +23,16 @@
   .post-item h2 a:hover { color: #818CF8; }
   .post-item p { font-size: 14px; line-height: 1.75; color: #94A3B8; margin: 0 0 14px; }
   .read-more {
-    display: inline-flex; align-items: center; gap: 6px;
+    display: inline-flex; align-items: center; gap: 7px;
     font: 600 13px/1 'Inter', sans-serif;
-    color: #818CF8;
-    border: 1px solid rgba(99,102,241,0.35);
-    padding: 7px 16px; border-radius: 8px;
+    color: #fff;
+    border: none;
+    background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+    padding: 9px 22px; border-radius: 999px;
     text-decoration: none;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
   }
-  .read-more:hover { background: #6366F1; color: #fff; border-color: #6366F1; }
+  .read-more:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(99,102,241,0.45); color: #fff; }
 </style>
 </head>
 <body>
