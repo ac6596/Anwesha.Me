@@ -127,7 +127,7 @@ a img { border: 0; }
 
 .term-eyebrow {
   font: 400 12px/1 'Fira Code', monospace;
-  color: rgba(0,120,212,0.45);
+  color: var(--orange);
   letter-spacing: 0.04em;
   margin: 0;
   text-align: center;
