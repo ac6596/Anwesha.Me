@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&family=Fira+Code:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -35,6 +35,8 @@
 
 <!--Begin Terminal Intro-->
 <div id="terminal-intro">
+
+  <canvas id="keyword-canvas"></canvas>
 
   <p class="term-eyebrow">// building resilient data ecosystems</p>
 
@@ -68,7 +70,7 @@
   </ul>
   <div class="top-divider"></div>
   <div class="content">
-    <img src="images/Anwesha_Resume_Pic.jpeg" />
+    <img src="images/Anwesha_Resume_Pic.jpeg" class="avatar-glow" />
     <h2>My Name is Anwesha Chakraborty, and I am a Lead Data Engineer / Data Architect</h2>
     <p>Results-driven Data Architect and Lead Engineer dedicated to building data platforms that meet the highest standards of operational resilience. With over a decade of experience in the Australian financial sector, I lead the delivery of end-to-end data integration frameworks designed for auditability, lineage, and scale. I am a hands-on mentor who excels at navigating fast-paced, regulated environments—leveraging Delta Lake, CI/CD, and DevOps to ensure data assets are secure, high-quality, and fully compliant with APRA standards.</p>
     <div class="skills-block">
@@ -142,7 +144,7 @@
       <div class="bento-card bento-languages">
         <div class="bento-card-header">
           <div class="bento-icon">
-            <svg fill="none" stroke="#10B981" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <svg fill="none" stroke="#0078D4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
           </div>
           <h3>Languages</h3>
         </div>
@@ -161,7 +163,7 @@
       <div class="bento-card bento-cloud">
         <div class="bento-card-header">
           <div class="bento-icon">
-            <svg fill="none" stroke="#10B981" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            <svg fill="none" stroke="#0078D4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
           </div>
           <h3>Cloud Platforms</h3>
         </div>
@@ -205,7 +207,7 @@
       <div class="bento-card bento-methodologies">
         <div class="bento-card-header">
           <div class="bento-icon">
-            <svg fill="none" stroke="#10B981" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            <svg fill="none" stroke="#0078D4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
           </div>
           <h3>Methodologies</h3>
         </div>
@@ -222,7 +224,7 @@
       <div class="bento-card bento-tools">
         <div class="bento-card-header">
           <div class="bento-icon">
-            <svg fill="none" stroke="#10B981" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16M9 11h6"/></svg>
+            <svg fill="none" stroke="#0078D4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16M9 11h6"/></svg>
           </div>
           <h3>Tools &amp; Databases</h3>
         </div>
@@ -238,7 +240,7 @@
       <div class="bento-card bento-datamgmt">
         <div class="bento-card-header">
           <div class="bento-icon">
-            <svg fill="none" stroke="#10B981" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <svg fill="none" stroke="#0078D4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
           <h3>Data Management</h3>
         </div>
@@ -487,20 +489,21 @@
       ]
     },
     { k: 'blank' },
-    { k: 'instant', cls: 't-info',    txt: '  Initializing profile...' },
+    { k: 'instant', cls: 't-info',    txt: '  Initializing data profile...' },
     { k: 'blank' },
     { k: 'instant', cls: 't-punc',    txt: '{' },
     { k: 'json', key: '  "name"',       val: '"Anwesha Chakraborty"',                   vc: 't-str',     comma: true  },
     { k: 'json', key: '  "role"',       val: '"Lead Data Engineer &amp; Architect"',    vc: 't-str',     comma: true  },
-    { k: 'json', key: '  "employer"',   val: '"ANZ Banking Group"',                     vc: 't-str',     comma: true  },
-    { k: 'json', key: '  "experience"', val: '"11+ years"',                             vc: 't-str',     comma: true  },
-    { k: 'json', key: '  "philosophy"', val: '"data is logic, but storytelling is the soul"', vc: 't-str',     comma: true  },
-    { k: 'json', key: '  "cloud"',      val: '["Azure", "GCP", "Cloudera"]',            vc: 't-arr-val', comma: true  },
-    { k: 'json', key: '  "on-prem"',    val: '["cloudera", "redhat openshift"]',        vc: 't-arr-val', comma: true  },
+    { k: 'json', key: '  "employer"',   val: '"Australia and New Zealand Banking Group"',                     vc: 't-str',     comma: true  },
+    { k: 'json', key: '  "experience"', val: '"11+ years | Banking & Financial Services"',                             vc: 't-str',     comma: true  },
+    { k: 'json', key: '  "specialisation"', val: '["Regulatory Data Assets", "Cloud Data Platforms", "Distributed Systems", "Data Governance by Design"]', vc: 't-arr-val', comma: true },
+    { k: 'json', key: '  "philosophy"', val: '"Leading the design of resilient data ecosystems for Finance and Energy, building scalable foundations from ingestion to trusted, regulatory-grade data assets."', vc: 't-str',     comma: true  },
+    { k: 'json', key: '  "cloud"',      val: '["Azure", "GCP", "AWS"]',            vc: 't-arr-val', comma: true  },
+    { k: 'json', key: '  "platforms"', val: '["Cloudera", "Red Hat OpenShift", "Teradata", "Starburst", "Delta Lake"]', vc: 't-arr-val', comma: true },
     { k: 'json', key: '  "status"',     val: '"&#10003; Active"',                       vc: 't-success', comma: false },
     { k: 'instant', cls: 't-punc',    txt: '}' },
     { k: 'blank' },
-    { k: 'instant', cls: 't-success', txt: '&#10003;  Profile loaded successfully.' },
+    { k: 'instant', cls: 't-success', txt: '&#10003;  Data profile loaded successfully.' },
     { k: 'blank' },
     { k: 'idle' }   // idle prompt + blinking cursor
   ];
@@ -600,121 +603,158 @@
 })();
 </script>
 <script>
-(function() {
-  var canvas = document.getElementById('hero-canvas');
+/* =====================================================
+   KEYWORD CLOUD — floating tech keywords with mouse
+   repulsion. Pure Canvas, no dependencies.
+===================================================== */
+(function () {
+  var canvas = document.getElementById('keyword-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
-  var W, H, cols;
 
-  // Token pools
-  var SQL  = ['SELECT','FROM','WHERE','JOIN','GROUP BY','ORDER BY','WITH','AS','ON',
-               'AND','OR','CASE','WHEN','THEN','END','OVER','PARTITION','COALESCE',
-               'DISTINCT','HAVING','UNION','NULL','CAST','WINDOW','FILTER'];
-  var PY   = ['def','return','import','class','for','if','else','True','False','None',
-               'yield','async','await','lambda','try','except','with','pass','raise',
-               'in','not','is','and','or'];
-  var DATA = ['schema','delta','load','dbt','DAG','task','flow','run','job',
-               'table','view','model','seed','test','ingest','pipeline','merge'];
-  var BIN  = ['0','1','01','10','0','1','0','1','0','1','11','00','101','010'];
+  // ---- Keyword pool --------------------------------
+  var KEYWORDS = [
+    'Python', 'SQL', 'BigQuery', 'dbt', 'Airflow',
+    'Azure', 'GCP', 'Spark', 'Kafka', 'Cloudera',
+    'Delta Lake', 'PySpark', 'Databricks', 'Terraform',
+    'CI/CD', 'APRA', 'Medallion', 'Lakehouse',
+    'ETL', 'ELT', 'Lineage', 'Delta', 'dbt Core',
+    'ADF', 'Synapse', 'ADLS', 'DBT', 'Flink'
+  ];
 
-  // Combined pool: binary weighted ~30%, SQL ~30%, PY ~25%, DATA ~15%
-  var POOL = BIN.concat(BIN).concat(SQL).concat(PY).concat(DATA);
+  // ---- State ---------------------------------------
+  var W = 0, H = 0;
+  var particles = [];
+  var mouse = { x: -9999, y: -9999 };
 
-  // Column spacing bands — mix tight and wide columns for varied density
-  var BAND_WIDTHS = [68, 80, 90, 100, 112];
+  // ---- Helpers -------------------------------------
+  function rand(lo, hi) { return lo + Math.random() * (hi - lo); }
+  function pick(arr)    { return arr[Math.floor(Math.random() * arr.length)]; }
 
-  function rand(min, max) { return min + Math.random() * (max - min); }
-  function pick(arr)       { return arr[Math.floor(Math.random() * arr.length)]; }
-
-  function makeCol(x) {
-    var fontSize = Math.floor(rand(10.5, 13.5));
-    var lineH    = fontSize * 2.0 + rand(0, 4);
-    var len      = Math.floor(rand(5, 16));           // column height in tokens
-    var items    = [];
-    for (var i = 0; i < len; i++) items.push(pick(POOL));
+  // ---- Particle factory ----------------------------
+  function makeParticle(forceX, forceY) {
+    var angle = rand(0, Math.PI * 2);
+    var speed = rand(0.09, 0.42);
+    // 78% Azure Blue, 22% Vivid Orange — both from the Modern Architect palette
+    var isOrange = Math.random() > 0.78;
     return {
-      x:       x + rand(-14, 14),                    // slight horizontal jitter
-      y:       -rand(80, H * 0.9 + len * lineH),     // random start above viewport
-      speed:   rand(0.18, 0.75),                      // very slow drift
-      fontSize: fontSize,
-      lineH:   lineH,
-      len:     len,
-      items:   items,
-      // base opacity — extremely faint, varies per column
-      opacity: rand(0.045, 0.115),
-      // per-column tint: emerald or slate
-      r: Math.random() > 0.72 ? 148 : 16,
-      g: Math.random() > 0.72 ? 163 : 185,
-      b: Math.random() > 0.72 ? 184 : 129
+      text:      pick(KEYWORDS),
+      x:         forceX !== undefined ? forceX : rand(0, W),
+      y:         forceY !== undefined ? forceY : rand(0, H),
+      dx:        Math.cos(angle) * speed,   // constant base drift
+      dy:        Math.sin(angle) * speed,
+      vx:        0,                          // repulsion velocity (decays)
+      vy:        0,
+      baseAlpha: rand(0.05, 0.15),
+      alpha:     0,                          // fades in from 0
+      fontSize:  Math.floor(rand(11, 16)),
+      isOrange:  isOrange
     };
   }
 
-  function initCols() {
-    cols = [];
-    var x = 0;
-    while (x < W + 60) {
-      var band = pick(BAND_WIDTHS);
-      cols.push(makeCol(x + band * 0.5));
-      x += band;
-    }
+  // ---- Init ----------------------------------------
+  function init() {
+    particles = [];
+    var count = Math.min(32, Math.max(20, Math.floor((W * H) / 22000)));
+    for (var i = 0; i < count; i++) particles.push(makeParticle());
   }
 
+  // ---- Resize --------------------------------------
   function resize() {
     W = canvas.width  = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
-    initCols();
+    if (particles.length === 0) init();
   }
 
-  function drawCol(col) {
-    ctx.save();
-    ctx.font = '400 ' + col.fontSize + 'px "Fira Code", "JetBrains Mono", monospace';
-    ctx.textAlign = 'center';
-
-    // Fade zones: items near top/bottom of canvas fade — canvas CSS mask handles most
-    // of this, but we also fade per-item based on its absolute canvas position
-    var fadeTop    = H * 0.12;
-    var fadeBottom = H * 0.62;
-
-    for (var i = 0; i < col.items.length; i++) {
-      var iy = col.y + i * col.lineH;
-
-      // Skip items fully off-screen
-      if (iy < -col.lineH * 2 || iy > H + col.lineH) continue;
-
-      // Per-item alpha: fade near top & bottom canvas edges
-      var a = col.opacity;
-      if (iy < fadeTop)    a *= Math.max(0, iy / fadeTop);
-      if (iy > fadeBottom) a *= Math.max(0, 1 - (iy - fadeBottom) / (H * 0.38));
-
-      if (a <= 0) continue;
-      ctx.fillStyle = 'rgba(' + col.r + ',' + col.g + ',' + col.b + ',' + a.toFixed(4) + ')';
-      ctx.fillText(col.items[i], col.x, iy);
-    }
-    ctx.restore();
-  }
+  // ---- Main loop -----------------------------------
+  var REPULSION_R = 130;  // pixels — repulsion radius
+  var REPULSION_F = 1.1;  // repulsion force scale
 
   function tick() {
     ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < cols.length; i++) {
-      var col = cols[i];
-      col.y += col.speed;
 
-      // When column has fully scrolled past bottom, reset it above the top
-      if (col.y > H + col.len * col.lineH + 40) {
-        col.y     = -col.len * col.lineH - rand(20, 300);
-        col.speed = rand(0.18, 0.75);
-        // Refresh ~half the tokens for variety
-        for (var j = 0; j < col.items.length; j++) {
-          if (Math.random() > 0.5) col.items[j] = pick(POOL);
-        }
+    // Find the single nearest keyword for pulse effect
+    var nearIdx  = -1;
+    var nearDist = Infinity;
+    for (var i = 0; i < particles.length; i++) {
+      var ddx = particles[i].x - mouse.x;
+      var ddy = particles[i].y - mouse.y;
+      var dd  = Math.sqrt(ddx * ddx + ddy * ddy);
+      if (dd < nearDist) { nearDist = dd; nearIdx = i; }
+    }
+
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+
+      // ---- Mouse repulsion -------------------------
+      var rx = p.x - mouse.x;
+      var ry = p.y - mouse.y;
+      var rd = Math.sqrt(rx * rx + ry * ry);
+      if (rd < REPULSION_R && rd > 1) {
+        var force = ((REPULSION_R - rd) / REPULSION_R) * REPULSION_F;
+        p.vx += (rx / rd) * force;
+        p.vy += (ry / rd) * force;
       }
 
-      drawCol(col);
+      // Clamp repulsion velocity
+      var spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+      if (spd > 3.8) { p.vx = (p.vx / spd) * 3.8; p.vy = (p.vy / spd) * 3.8; }
+
+      // Decay repulsion toward zero (spring-back)
+      p.vx *= 0.91;
+      p.vy *= 0.91;
+
+      // Advance position: base drift + repulsion
+      p.x += p.dx + p.vx;
+      p.y += p.dy + p.vy;
+
+      // Wrap at canvas edges
+      var pad = 70;
+      if (p.x < -pad)    p.x = W + pad;
+      if (p.x > W + pad) p.x = -pad;
+      if (p.y < -pad)    p.y = H + pad;
+      if (p.y > H + pad) p.y = -pad;
+
+      // ---- Alpha: fade in + pulse nearest ----------
+      var target = p.baseAlpha;
+      if (i === nearIdx && nearDist < 220) {
+        // Pulse: nearest keyword brightens subtly
+        target = Math.min(0.28, p.baseAlpha * 2.4);
+      }
+      p.alpha += (target - p.alpha) * 0.06; // smooth lerp
+
+      // ---- Draw ------------------------------------
+      ctx.save();
+      ctx.font      = '400 ' + p.fontSize + 'px "JetBrains Mono", "Fira Code", monospace';
+      ctx.textAlign = 'center';
+      ctx.fillStyle = p.isOrange
+        ? 'rgba(249,115,22,'  + p.alpha.toFixed(4) + ')'
+        : 'rgba(0,120,212,'   + p.alpha.toFixed(4) + ')';
+      ctx.fillText(p.text, p.x, p.y);
+      ctx.restore();
     }
+
     requestAnimationFrame(tick);
   }
 
-  window.addEventListener('resize', resize);
+  // ---- Mouse tracking (listen on parent since canvas
+  //      has pointer-events: none) --------------------
+  var intro = document.getElementById('terminal-intro');
+  if (intro) {
+    intro.addEventListener('mousemove', function (e) {
+      var rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+    intro.addEventListener('mouseleave', function () {
+      mouse.x = -9999; mouse.y = -9999;
+    });
+  }
+
+  window.addEventListener('resize', function () {
+    resize();
+  });
+
   resize();
   tick();
 })();
