@@ -38,7 +38,7 @@
 
   <canvas id="keyword-canvas"></canvas>
 
-  <p class="term-eyebrow">// building resilient data ecosystems</p>
+  <p class="term-eyebrow">// BUILDING RESILIENT DATA ECOSYSTEMS</p>
 
   <div class="terminal-window">
     <div class="terminal-titlebar">
@@ -645,9 +645,9 @@
       dy:        Math.sin(angle) * speed,
       vx:        0,                          // repulsion velocity (decays)
       vy:        0,
-      baseAlpha: rand(0.05, 0.15),
+      baseAlpha: rand(0.18, 0.40),
       alpha:     0,                          // fades in from 0
-      fontSize:  Math.floor(rand(11, 16)),
+      fontSize:  Math.floor(rand(12, 18)),
       isOrange:  isOrange
     };
   }
@@ -719,7 +719,7 @@
       var target = p.baseAlpha;
       if (i === nearIdx && nearDist < 220) {
         // Pulse: nearest keyword brightens subtly
-        target = Math.min(0.28, p.baseAlpha * 2.4);
+        target = Math.min(0.72, p.baseAlpha * 2.0);
       }
       p.alpha += (target - p.alpha) * 0.06; // smooth lerp
 
