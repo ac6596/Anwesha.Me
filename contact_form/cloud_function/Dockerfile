@@ -13,5 +13,5 @@ ENV PORT=8080
 # @functions_framework.cloud_event is just a decorator; the callable is handle_contact_message.
 CMD exec functions-framework \
       --target=handle_contact_message \
-      --signature-type=cloudevent \
+      --signature-type=http \
       --port=$PORT

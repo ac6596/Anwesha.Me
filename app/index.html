@@ -790,7 +790,7 @@
     btn.value     = 'Sending\u2026';
     status.style.display = 'none';
 
-    fetch('/contact', {
+    fetch('https://anwesha-net-website-publisher-871767484235.australia-southeast2.run.app', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ name: name, email: email, message: message })
