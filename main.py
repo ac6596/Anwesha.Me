@@ -4,9 +4,7 @@ from pathlib import Path
 from flask import Flask, jsonify, request, render_template, abort
 import markdown
 
-# template_folder includes 'app' so index.html can be rendered as a Jinja2 template
-# without being moved out of the static folder.
-app = Flask(__name__, static_folder='app', static_url_path='', template_folder=['templates', 'app'])
+app = Flask(__name__, static_folder='app', static_url_path='', template_folder='templates')
 
 POSTS_DIR = Path(__file__).parent / 'posts'
 
@@ -43,9 +41,8 @@ def get_all_posts():
 
 @app.route('/')
 def index():
-    """Serves the main frontend page, injecting the contact service URL."""
-    contact_url = os.environ.get('CONTACT_FORM_URL', '')
-    return render_template('index.html', contact_url=contact_url)
+    """Serves the main frontend page."""
+    return app.send_static_file('index.html')
 
 
 @app.route('/blog')
