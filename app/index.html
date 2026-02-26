@@ -391,7 +391,7 @@
   <div class="top-divider"></div>
   <div class="content">
     <div id="form">
-      <form action="#">
+      <form id="contact-form" action="#">
         <span>Name</span>
         <input type="text" name="name" class="name" />
         <span>Email</span>
@@ -399,6 +399,7 @@
         <span>Message</span>
         <textarea class="message"></textarea>
         <input type="submit" name="submit" value="Submit" class="submit">
+        <p id="form-status" style="display:none;clear:both;margin:10px 0 0;font:600 13px/18px 'Inter',sans-serif;"></p>
       </form>
     </div>
     <div id="social-footer">
@@ -757,6 +758,62 @@
 
   resize();
   tick();
+})();
+</script>
+<script>
+// --- Contact form submission ---
+(function () {
+  var form   = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
+  if (!form || !status) return;
+
+  function showStatus(msg, ok) {
+    status.textContent = msg;
+    status.style.color   = ok ? '#22c55e' : '#ef4444';
+    status.style.display = 'block';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name    = form.querySelector('input.name').value.trim();
+    var email   = form.querySelector('input.email').value.trim();
+    var message = form.querySelector('textarea.message').value.trim();
+
+    if (!name || !email || !message) {
+      showStatus('Please fill in all fields.', false);
+      return;
+    }
+
+    var btn       = form.querySelector('input.submit');
+    btn.disabled  = true;
+    btn.value     = 'Sending\u2026';
+    status.style.display = 'none';
+
+    fetch('/contact', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ name: name, email: email, message: message })
+    })
+    .then(function (res) {
+      return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+    })
+    .then(function (result) {
+      if (result.ok) {
+        showStatus('Message sent \u2014 I\'ll be in touch soon!', true);
+        form.reset();
+      } else {
+        showStatus(result.data.error || 'Something went wrong. Please try again.', false);
+      }
+    })
+    .catch(function () {
+      showStatus('Network error. Please check your connection and try again.', false);
+    })
+    .finally(function () {
+      btn.disabled = false;
+      btn.value    = 'Submit';
+    });
+  });
 })();
 </script>
 </body>
