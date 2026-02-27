@@ -1785,7 +1785,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
     if (e.isDefaultPrevented()) return
 
-    var $target = $(selector)
+    var $target = $(document).find(selector)
 
     this.activate($this.parent('li'), $ul)
     this.activate($target, $target.parent(), function () {
