@@ -2,6 +2,7 @@
 title: "Data Foundations: Because Regulators Don't Accept 'It Worked on My Machine'!"
 date: 2025-11-08
 excerpt: Why mastering data governance, lineage, and quality matters more than chasing the latest tech — especially in regulated banking environments.
+author: Anwesha Chakraborty
 ---
 
 It all started on a Friday afternoon — the kind where the office smells like reheated coffee, everyone's staring at the clock, waiting for the weekend miracle. I was tidying up my week's to-do list, locked in a battle with a stubborn dbt model build.
