@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script>
+  (function() {
+    var theme = localStorage.getItem('theme');
+    if (theme === 'dim') {
+      document.documentElement.setAttribute('data-theme', 'dim');
+    }
+  })();
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{{ title }} — Anwesha Chakraborty</title>
 <link href="/styles.css" rel="stylesheet" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,65 +22,75 @@
     display: inline-flex; align-items: center; gap: 6px;
     margin-bottom: 28px;
     font: 600 13px/1 'Inter', sans-serif;
-    color: #2B9FE8; text-decoration: none;
-    border: 1px solid rgba(0,120,212,0.3);
+    color: var(--accent-light); text-decoration: none;
+    border: 1px solid var(--border);
     padding: 6px 14px; border-radius: 8px;
     transition: background 0.2s, color 0.2s;
   }
-  .back-link:hover { background: rgba(0,120,212,0.12); color: #E2E8F0; }
+  .back-link:hover { background: var(--glass); color: var(--text); }
   .blog-post-page h1 {
     font: 800 38px/46px 'Inter', sans-serif;
-    color: #E2E8F0;
+    color: var(--text);
     letter-spacing: -0.02em;
     margin: 0 0 10px;
   }
-  .post-meta { font-size: 12px; color: #94A3B8; font-style: italic; margin-bottom: 32px; }
-  .post-body { font: 400 15px/1.85 'Outfit', sans-serif; color: #CBD5E1; }
+  .post-meta { font-size: 12px; color: var(--text-muted); font-style: italic; margin-bottom: 32px; }
+  .post-body { font: 400 15px/1.85 'Outfit', sans-serif; color: var(--text-sec); }
   .post-body h2 {
     font: 700 22px/28px 'Inter', sans-serif;
-    color: #E2E8F0;
+    color: var(--text);
     letter-spacing: -0.02em;
     margin: 36px 0 12px;
-    border-left: 3px solid #0078D4;
+    border-left: 3px solid var(--accent);
     padding-left: 14px;
   }
   .post-body h3 {
     font: 600 17px/24px 'Inter', sans-serif;
-    color: #E2E8F0;
+    color: var(--text);
     letter-spacing: -0.01em;
     margin: 28px 0 10px;
   }
   .post-body p { margin: 0 0 18px; }
   .post-body ul, .post-body ol { margin: 0 0 18px 22px; }
   .post-body li { margin-bottom: 8px; }
-  .post-body hr { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 36px 0; }
+  .post-body hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
   .post-body table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 13px; }
-  .post-body th, .post-body td { border: 1px solid rgba(255,255,255,0.1); padding: 10px 14px; text-align: left; }
-  .post-body th { background: rgba(0,120,212,0.08); color: #E2E8F0; font-weight: 600; }
+  .post-body th, .post-body td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; }
+  .post-body th { background: rgba(0,120,212,0.08); color: var(--text); font-weight: 600; }
   .post-body code {
     background: rgba(0,120,212,0.08);
     border: 1px solid rgba(0,120,212,0.18);
     padding: 2px 7px; border-radius: 4px;
-    font-size: 13px; color: #2B9FE8;
+    font-size: 13px; color: var(--accent-light);
   }
   .post-body pre {
-    background: #1E293B;
-    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
     padding: 20px; border-radius: 10px;
     overflow-x: auto; margin-bottom: 20px;
   }
-  .post-body pre code { background: none; border: none; padding: 0; color: #CBD5E1; }
+  .post-body pre code { background: none; border: none; padding: 0; color: var(--text-sec); }
   .post-body blockquote {
-    border-left: 3px solid #0078D4;
+    border-left: 3px solid var(--accent);
     margin: 0 0 18px;
     padding: 10px 20px;
-    color: #94A3B8;
+    color: var(--text-muted);
     font-style: italic;
-    background: rgba(0,120,212,0.04);
+    background: var(--glass);
     border-radius: 0 8px 8px 0;
   }
-  .post-body a { color: #F97316; text-decoration: underline; }
-  .post-body a:hover { color: #FB923C; }
+  .post-body a { color: var(--orange); text-decoration: underline; }
+  .post-body a:hover { color: var(--orange-light); }
+  .post-body img {
+    max-width: 100%;
+    width: 620px;
+    height: auto;
+    display: block;
+    margin: 28px auto;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
 </style>
 </head>
 <body>
@@ -83,6 +102,17 @@
     <li><a href="/#work">Work</a></li>
     <li><a href="/blog">Blog</a></li>
     <li><a href="/#connect">Connect</a></li>
+    <li class="theme-toggle-li">
+      <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">
+        <svg class="crescent-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+        <svg class="sparkles-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36-6.36l-.7.7M6.34 17.66l-.7.7M5.64 5.64l.7.7m11.32 11.32l.7.7"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
+    </li>
   </ul>
 </div>
 
@@ -98,5 +128,25 @@
     <div class="bottom-divider"></div>
   </div>
 </div>
+<script>
+/* =====================================================
+   THEME TOGGLE CLICK HANDLER
+   ===================================================== */
+(function() {
+  var toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+  
+  toggleBtn.addEventListener('click', function() {
+    var currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dim') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'midnight');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dim');
+      localStorage.setItem('theme', 'dim');
+    }
+  });
+})();
+</script>
 </body>
 </html>
