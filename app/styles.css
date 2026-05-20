@@ -14,6 +14,7 @@
 ===================================================== */
 
 :root {
+  /* Dark theme variables (default) */
   --bg-primary:   #0B0E14;
   --bg-secondary: #1E293B;
   --accent:       #0078D4;
@@ -26,6 +27,30 @@
   --glass:        rgba(255, 255, 255, 0.04);
   --border:       rgba(255, 255, 255, 0.08);
   --teal:         #2B9FE8;
+  --header-bg:    rgba(11, 14, 20, 0.90);
+  --header-bg-scrolled: rgba(11, 14, 20, 0.97);
+  --icon-invert:  invert(1);
+  --card-shadow-hover: 0 12px 40px rgba(0, 120, 212, 0.16);
+}
+
+html[data-theme="dim"] {
+  /* Premium Soothing Dim Theme (Lighter than Midnight, but not White/Off-White) */
+  --bg-primary:   #1E293B; /* Soothing mid-slate grey-blue, easy on the eyes */
+  --bg-secondary: #0F172A; /* Slightly darker slate for card depth */
+  --accent:       #38BDF8; /* Softer sky blue accent */
+  --accent-light: #7DD3FC; /* Light sky blue hover */
+  --orange:       #FB923C; /* Soft orange */
+  --orange-light: #FDBA74;
+  --text:         #F8FAFC; /* Crisp headings */
+  --text-sec:     #CBD5E1; /* Soft white body copy */
+  --text-muted:   #94A3B8; /* Slate gray */
+  --glass:        rgba(255, 255, 255, 0.04);
+  --border:       rgba(255, 255, 255, 0.08);
+  --teal:         #38BDF8;
+  --header-bg:    rgba(30, 41, 59, 0.85); /* Semi-transparent matching slate header */
+  --header-bg-scrolled: rgba(30, 41, 59, 0.96);
+  --icon-invert:  invert(1); /* Keep developer logos white */
+  --card-shadow-hover: 0 12px 40px rgba(15, 23, 42, 0.3);
 }
 
 * { box-sizing: border-box; }
@@ -73,13 +98,15 @@ a img { border: 0; }
 }
 
 #container {
-  width: 950px;
+  width: 100%;
+  max-width: 950px;
   margin: 0 auto 300px auto;
   background: transparent;
   overflow: auto;
   padding-bottom: 100px;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 /****************************************************/
@@ -256,9 +283,10 @@ a img { border: 0; }
 /* HEADER                                           */
 /****************************************************/
 #header {
-  width: 950px;
+  width: 100%;
+  max-width: 950px;
   height: 70px;
-  background: rgba(11, 14, 20, 0.90);
+  background: var(--header-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -266,13 +294,15 @@ a img { border: 0; }
   position: fixed;
   top: 0;
   left: 50%;
-  margin: 0 0 0 -475px;
+  transform: translateX(-50%);
+  margin: 0;
   z-index: 100;
+  box-sizing: border-box;
   transition: height 0.3s ease-out, background 0.3s ease-out;
 }
 #header.header-scrolled {
   height: 52px;
-  background: rgba(11, 14, 20, 0.97);
+  background: var(--header-bg-scrolled);
 }
 #header #logo { display: none; }
 #header #main-menu {
@@ -371,7 +401,7 @@ a img { border: 0; }
 /* Dark-on-dark icons — invert for visibility */
 .devicon-github-original,
 .devicon-flask-original {
-  filter: invert(1) opacity(0.8);
+  filter: var(--icon-invert) opacity(0.8);
 }
 
 /* Bio horizontal icon strip */
@@ -440,9 +470,9 @@ a img { border: 0; }
   font: 400 11.5px/1 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
   color: var(--text-muted);
   padding: 4px 10px;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--border);
   border-radius: 6px;
-  background: rgba(255,255,255,0.03);
+  background: var(--glass);
   cursor: default;
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
@@ -492,7 +522,7 @@ a img { border: 0; }
 .bento-card:hover {
   border-color: rgba(0,120,212,0.5);
   transform: scale(1.02);
-  box-shadow: 0 8px 32px rgba(0,120,212,0.16);
+  box-shadow: var(--card-shadow-hover);
 }
 .bento-card-header {
   display: flex;
@@ -609,7 +639,7 @@ a img { border: 0; }
 }
 .work-bento-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 12px 40px rgba(0,120,212,0.18);
+  box-shadow: var(--card-shadow-hover);
 }
 .work-bento-card h3 { margin: 12px 0 10px; font-size: 18px; color: var(--text); }
 .work-bento-card p  { font-size: 14px; line-height: 1.75; color: var(--text-muted); margin: 0 0 18px; }
@@ -665,7 +695,7 @@ a img { border: 0; }
 }
 .blog-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 12px 40px rgba(0,120,212,0.15);
+  box-shadow: var(--card-shadow-hover);
 }
 .blog-card h3 { margin: 8px 0 12px; font-size: 16px; line-height: 1.5; }
 .blog-card h3 a { color: var(--text); text-decoration: none; }
@@ -765,3 +795,208 @@ a img { border: 0; }
 }
 .top-divider    { margin-bottom: 40px; }
 .bottom-divider { margin-top: 40px; }
+
+/* =====================================================
+   THEME TOGGLE BUTTON
+   ===================================================== */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: color 0.2s, background-color 0.2s, transform 0.2s;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  outline: none;
+}
+.theme-toggle-btn:hover {
+  color: var(--accent-light);
+  background-color: var(--glass);
+  transform: scale(1.1);
+}
+.theme-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s ease;
+}
+.theme-toggle-btn:active svg {
+  transform: rotate(25deg) scale(0.95);
+}
+
+/* Toggle visibility of crescent moon / sparkles based on HTML data-theme="dim" */
+html[data-theme="dim"] .theme-toggle-btn .sparkles-icon { display: block; }
+html[data-theme="dim"] .theme-toggle-btn .crescent-icon { display: none; }
+html:not([data-theme="dim"]) .theme-toggle-btn .sparkles-icon { display: none; }
+html:not([data-theme="dim"]) .theme-toggle-btn .crescent-icon { display: block; }
+
+/* Adjustments for theme toggle alignment in main-menu */
+#header #main-menu li.theme-toggle-li {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* =====================================================
+   MOBILE & RESPONSIVE LAYOUT MEDIA QUERIES
+   ===================================================== */
+@media (max-width: 768px) {
+  /* Navigation & Header */
+  #header {
+    padding: 0 20px;
+    height: auto;
+  }
+  #header #main-menu {
+    flex-wrap: wrap;
+    height: auto !important;
+    padding: 12px 0;
+    gap: 8px 12px;
+    justify-content: center;
+  }
+  #header #main-menu li {
+    margin: 0;
+    font-size: 11px;
+  }
+  #header #main-menu li.theme-toggle-li {
+    margin-left: 5px;
+  }
+  #header.header-scrolled #main-menu {
+    height: auto;
+  }
+
+  /* Core Layout Offsets */
+  .blog-list-page,
+  .blog-post-page,
+  #about,
+  #skills,
+  #experience,
+  #work,
+  #blog,
+  #connect {
+    margin: 0 20px !important;
+    padding-top: 130px !important; /* Ensure content doesn't get covered by wrapped header */
+  }
+
+  #terminal-intro {
+    padding: 130px 20px 0;
+  }
+
+  /* About section stacking */
+  #about h1 {
+    float: none;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+  }
+  #about #top-social {
+    float: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    margin-bottom: 20px;
+  }
+  #about .content img {
+    float: none;
+    display: block;
+    margin: 0 auto 24px auto;
+    max-width: 100%;
+    width: 200px;
+    height: auto;
+  }
+
+  /* Bento Grids */
+  .ecosystem-bento,
+  .skills-bento {
+    grid-template-columns: 1fr;
+  }
+  .bento-cloud {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  .bento-languages,
+  .bento-methodologies,
+  .bento-tools,
+  .bento-datamgmt {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Skills bento internal spacing */
+  .skills-section-inner {
+    padding: 32px 20px 40px;
+  }
+
+  /* Work section stacking */
+  .work-bento {
+    grid-template-columns: 1fr;
+  }
+  .work-bento-card {
+    padding: 20px;
+  }
+
+  /* Blog Cards */
+  .blog-cards {
+    justify-content: center;
+  }
+  .blog-card {
+    width: 100%;
+  }
+
+  /* Connect Section Form */
+  #connect #form {
+    width: 100% !important;
+    float: none;
+    margin-bottom: 40px;
+  }
+  #connect #form span {
+    width: 100%;
+    float: none;
+    display: block;
+    margin-bottom: 6px;
+    text-align: left;
+  }
+  #connect #form input,
+  #connect #form textarea {
+    width: 100% !important;
+    float: none;
+    box-sizing: border-box;
+  }
+  #connect #form input.submit {
+    float: none;
+    margin: 10px 0 0 0;
+    width: 100%;
+  }
+  #connect #social-footer {
+    width: 100% !important;
+    float: none;
+    margin-left: 0;
+    text-align: center;
+  }
+  #connect #social-footer #sm-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Blog post content styling */
+  .blog-post-page h1 {
+    font-size: 28px !important;
+    line-height: 34px !important;
+  }
+  .post-body table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+

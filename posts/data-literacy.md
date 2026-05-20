@@ -5,6 +5,9 @@ excerpt: AI can accelerate decisions, automate workflows, and generate insights 
 author: Anwesha Chakraborty
 ---
 
+![The Missing Layer in AI Transformation: Data Literacy](/images/data_literacy_banner.png)
+<p align="center" style="font-style: italic; color: var(--text-muted); font-size: 13.5px; margin-top: -18px; margin-bottom: 28px;">This image was generated using Antigravity.</p>
+
 >**“Culture eats strategy for breakfast.”**
 
 A quote that has survived decades of boardrooms, leadership offsites, and transformation decks. But in the AI era, it feels like there’s a modern sequel:

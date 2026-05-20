@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script>
+  (function() {
+    var theme = localStorage.getItem('theme');
+    if (theme === 'dim') {
+      document.documentElement.setAttribute('data-theme', 'dim');
+    }
+  })();
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Blog — Anwesha Chakraborty</title>
 <link href="/styles.css" rel="stylesheet" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,23 +20,23 @@
   .blog-list-page { margin: 0 43px; padding-top: 110px; }
   .post-list { list-style: none; margin: 30px 0 0; padding: 0; }
   .post-item {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid var(--border);
     padding: 28px 0;
     transition: transform 0.3s ease;
   }
   .post-item:last-child { border-bottom: none; }
   .post-item:hover { transform: translateX(4px); }
-  .post-item .post-date { font-size: 12px; color: #94A3B8; font-style: italic; }
+  .post-item .post-date { font-size: 12px; color: var(--text-muted); font-style: italic; }
   .post-item h2 { margin: 8px 0 10px; font: 700 22px/28px 'Inter', sans-serif; letter-spacing: -0.02em; }
-  .post-item h2 a { color: #E2E8F0; text-decoration: none; transition: color 0.2s; }
-  .post-item h2 a:hover { color: #F97316; }
-  .post-item p { font-size: 14px; line-height: 1.75; color: #94A3B8; margin: 0 0 14px; }
+  .post-item h2 a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+  .post-item h2 a:hover { color: var(--orange); }
+  .post-item p { font-size: 14px; line-height: 1.75; color: var(--text-sec); margin: 0 0 14px; }
   .read-more {
     display: inline-flex; align-items: center; gap: 7px;
     font: 600 13px/1 'Inter', sans-serif;
     color: #fff;
     border: none;
-    background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
     padding: 9px 22px; border-radius: 999px;
     text-decoration: none;
     transition: box-shadow 0.25s ease, transform 0.25s ease;
@@ -44,6 +53,17 @@
     <li><a href="/#work">Work</a></li>
     <li><a href="/blog">Blog</a></li>
     <li><a href="/#connect">Connect</a></li>
+    <li class="theme-toggle-li">
+      <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">
+        <svg class="crescent-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+        <svg class="sparkles-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36-6.36l-.7.7M6.34 17.66l-.7.7M5.64 5.64l.7.7m11.32 11.32l.7.7"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
+    </li>
   </ul>
 </div>
 
@@ -66,5 +86,25 @@
     <div class="bottom-divider"></div>
   </div>
 </div>
+<script>
+/* =====================================================
+   THEME TOGGLE CLICK HANDLER
+   ===================================================== */
+(function() {
+  var toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+  
+  toggleBtn.addEventListener('click', function() {
+    var currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dim') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'midnight');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dim');
+      localStorage.setItem('theme', 'dim');
+    }
+  });
+})();
+</script>
 </body>
 </html>

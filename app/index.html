@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script>
+  (function() {
+    var theme = localStorage.getItem('theme');
+    if (theme === 'dim') {
+      document.documentElement.setAttribute('data-theme', 'dim');
+    }
+  })();
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Solving Data Drama &amp; Meeting Deadlines</title>
 <link href="styles.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
@@ -28,6 +37,17 @@
     <li><a href="#work">Work</a></li>
     <li><a href="#blog">Blog</a></li>
     <li><a href="#connect">Connect</a></li>
+    <li class="theme-toggle-li">
+      <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">
+        <svg class="crescent-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+        <svg class="sparkles-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36-6.36l-.7.7M6.34 17.66l-.7.7M5.64 5.64l.7.7m11.32 11.32l.7.7"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
+    </li>
   </ul>
 </div>
 
@@ -823,6 +843,26 @@
       btn.disabled = false;
       btn.value    = 'Submit';
     });
+  });
+})();
+</script>
+<script>
+/* =====================================================
+   THEME TOGGLE CLICK HANDLER
+   ===================================================== */
+(function() {
+  var toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+  
+  toggleBtn.addEventListener('click', function() {
+    var currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dim') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'midnight');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dim');
+      localStorage.setItem('theme', 'dim');
+    }
   });
 })();
 </script>
