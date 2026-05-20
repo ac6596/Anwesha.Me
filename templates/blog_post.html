@@ -96,23 +96,26 @@
 <body>
 <div id="header">
   <div id="logo"><a href="/"><img src="/images/logo.png"></a></div>
+  <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">
+    <svg class="crescent-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+    </svg>
+    <svg class="sparkles-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36-6.36l-.7.7M6.34 17.66l-.7.7M5.64 5.64l.7.7m11.32 11.32l.7.7"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+    </svg>
+  </button>
+  <button id="mobile-menu-toggle" aria-label="Toggle menu" class="mobile-toggle-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <ul id="main-menu">
     <li><a href="/#about">About</a></li>
     <li><a href="/#experience">Experience</a></li>
     <li><a href="/#work">Work</a></li>
     <li><a href="/blog">Blog</a></li>
     <li><a href="/#connect">Connect</a></li>
-    <li class="theme-toggle-li">
-      <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">
-        <svg class="crescent-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-        </svg>
-        <svg class="sparkles-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36-6.36l-.7.7M6.34 17.66l-.7.7M5.64 5.64l.7.7m11.32 11.32l.7.7"></path>
-          <circle cx="12" cy="12" r="3"></circle>
-        </svg>
-      </button>
-    </li>
   </ul>
 </div>
 
@@ -146,6 +149,50 @@
       localStorage.setItem('theme', 'dim');
     }
   });
+})();
+</script>
+<script>
+/* =====================================================
+   MOBILE MENU TOGGLE HANDLER
+   ===================================================== */
+(function() {
+  var menuToggle = document.getElementById('mobile-menu-toggle');
+  var mainMenu = document.getElementById('main-menu');
+  if (!menuToggle || !mainMenu) return;
+  
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isActive = menuToggle.classList.toggle('active');
+    mainMenu.classList.toggle('active');
+    if (isActive) {
+      document.documentElement.classList.add('menu-open');
+    } else {
+      document.documentElement.classList.remove('menu-open');
+    }
+  });
+
+  // Close menu when clicking outside (and not on theme toggle)
+  document.addEventListener('click', function(e) {
+    var themeToggle = document.getElementById('theme-toggle');
+    if (mainMenu.classList.contains('active') && 
+        !mainMenu.contains(e.target) && 
+        e.target !== menuToggle && 
+        (!themeToggle || !themeToggle.contains(e.target))) {
+      menuToggle.classList.remove('active');
+      mainMenu.classList.remove('active');
+      document.documentElement.classList.remove('menu-open');
+    }
+  });
+
+  // Close menu when clicking menu links
+  var links = mainMenu.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function() {
+      menuToggle.classList.remove('active');
+      mainMenu.classList.remove('active');
+      document.documentElement.classList.remove('menu-open');
+    });
+  }
 })();
 </script>
 </body>
